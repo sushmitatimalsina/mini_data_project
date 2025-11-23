@@ -1,21 +1,21 @@
 import requests
 import pandas as pd
 
-# users_url = "https://jsonplaceholder.typicode.com/users"
-# users_data = requests.get(users_url).json()
+users_url = "https://jsonplaceholder.typicode.com/users"
+users_data = requests.get(users_url).json()
 
-# users = []
-# for u in users_data:
-#     users.append({
-#         "ID": u["id"],
-#         "Name": u["name"],
-#         "Username": u["username"],
-#         "Email": u["email"],
-#         "City": u["address"]["city"]
-#     })
-# df_users = pd.DataFrame(users)
-# df_users.to_excel("users.xlsx", index=False)
-# print("Users saved to users.xlsx")   
+users = []
+for u in users_data:
+    users.append({
+        "ID": u["id"],
+        "Name": u["name"],
+        "Username": u["username"],
+        "Email": u["email"],
+        "City": u["address"]["city"]
+    })
+df_users = pd.DataFrame(users)
+df_users.to_excel("users.xlsx", index=False)
+print("Users saved to users.xlsx")   
 
 post_url = "https://jsonplaceholder.typicode.com/posts"
 post_data = requests.get(post_url).json()
